@@ -67,7 +67,7 @@ function Register({ users }) {
 
   return (
     <div className="app">
-      <div className="login-form">
+      <div className="register-form">
         <div className="title">Register</div>
         {isSubmitted ? <div>User is successfully registered in</div> : renderForm}
       </div>
