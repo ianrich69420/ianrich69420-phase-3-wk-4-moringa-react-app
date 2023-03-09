@@ -3,6 +3,7 @@ import './App.css';
 import Login from  './components/Login';
 import Register from './components/Register';
 import Projects from './components/Projects';
+import AddProject from './components/AddProject'
 
 function App() {
   const [users, setUsers] = useState([])
@@ -29,7 +30,7 @@ function App() {
 
   return (
     <div>
-      <Projects projects={projects} deleteProject={deleteProject} />
+      <AddProject projects={projects}/>
     </div>
   )
 }
