@@ -10,13 +10,13 @@ function Login({ users, setUser }) {
     event.preventDefault();
 
     const errors = {
-        username: "Invalid username",
+        email: "Invalid email",
         password: "Invalid password"
     };
 
-    var { username, password } = document.forms[0];
+    var { email, password } = document.forms[0];
 
-    const userData = users.find((user) => user.username === username.value);
+    const userData = users.find((user) => user.email === email.value);
 
     if (userData) {
       if (userData.password !== password.value) {
@@ -25,7 +25,7 @@ function Login({ users, setUser }) {
         setIsSubmitted(true);
       }
     } else {
-      setErrorMessages({ name: "username", message: errors.username });
+      setErrorMessages({ name: "email", message: errors.email });
     }
   };
 
@@ -43,9 +43,9 @@ function Login({ users, setUser }) {
     <div className="form">
       <form onSubmit={handleSubmit}>
         <div className="input-container">
-          <label>Username </label>
-          <input type="text" name="username" required />
-          {renderErrorMessage("username")}
+          <label>Email </label>
+          <input type="email" name="email" required />
+          {renderErrorMessage("email")}
         </div>
         <div className="input-container">
           <label>Password </label>

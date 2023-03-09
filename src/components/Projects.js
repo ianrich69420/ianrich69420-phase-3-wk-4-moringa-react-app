@@ -25,6 +25,7 @@ function Projects({ projects, deleteProject }) {
               </section>
               <br />
               <a href={project.project_link} target="_blank" rel="noreferrer">Project Link!</a>
+              <br />
               <button className="button" onClick={() => deleteProject(project)}>Delete Project</button>
           </div>
         </div>
