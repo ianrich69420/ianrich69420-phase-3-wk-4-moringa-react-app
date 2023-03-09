@@ -5,8 +5,11 @@ import Register from './components/Register';
 import Projects from './components/Projects';
 import AddProject from './components/AddProject'
 import AddProjectMember from './components/AddProjectMember';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import NavBar from './components/Navbar';
 
 function App() {
+
   const [users, setUsers] = useState([])
   const [projects, setProjects] = useState([])
   const [projectMembers, setProjectMembers] = useState([])
@@ -38,7 +41,17 @@ function App() {
 
   return (
     <div>
-      <AddProjectMember projectMembers={projectMembers} users={users} projects={projects} />
+      <Router>
+        <NavBar />
+        <Routes>
+          <Route exact path="/login" element={<Login users={users} />} />
+          <Route exact path="/register" element={<Register users={users} />} />
+          <Route exact path="/projects" element={<Projects projects={projects} deleteProject={deleteProject} />} />
+          <Route exact path="/add_project" element={<AddProject projects={projects} />} />
+          <Route exact path="/add_project_member" element={<AddProjectMember projectMembers={projectMembers} users={users} projects={projects} />} />
+          <Route path="*" element={<h1>404 not found.</h1>} />
+        </Routes>
+      </Router>
     </div>
   )
 }
