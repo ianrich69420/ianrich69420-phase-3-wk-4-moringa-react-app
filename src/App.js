@@ -40,14 +40,26 @@ function App() {
     setProjects(projects.filter((project) => project.id !== projectToDelete.id))
   }
 
+  function updateProject(id, status) {
+    const updatedProjects = projects.map(project => {
+        if (project.id === id) {
+            return { ...project, status }
+        } else {
+           return project 
+        }
+    })
+    setProjects(updatedProjects)
+  }
+
   return (
     <div>
       <Router>
         <NavBar setUser={setToken} user={token}/>
         <Routes>
-          <Route exact path="/login" element={<Login users={users} setUser={setToken} />} />
+          <Route path="/" element={<Login users={users} setUser={setToken} />} />
+          <Route path="/login" element={<Login users={users} setUser={setToken} />} />
           <Route exact path="/register" element={<Register users={users} />} />
-          <Route exact path="/projects" element={<Projects projects={projects} deleteProject={deleteProject} />} />
+          <Route exact path="/projects" element={<Projects projects={projects} deleteProject={deleteProject} updateProject={updateProject}/>} />
           <Route exact path="/add_project" element={<AddProject projects={projects} />} />
           <Route exact path="/add_project_member" element={<AddProjectMember projectMembers={projectMembers} users={users} projects={projects} />} />
           <Route path="*" element={<h1>404 not found.</h1>} />

@@ -1,35 +1,11 @@
 import React from 'react';
+import Project from './Project';
 
-function Projects({ projects, deleteProject }) {
+function Projects({ projects, deleteProject, updateProject }) {
 
   return (
       projects.map(project => (
-        <div className='project' key={project.id}>
-          <div className="col-4">
-              <h2>{project.project_name}</h2>
-              <section>
-                <details>
-                  <summary>Description</summary>
-                  <div className='description'>
-                    <p>{project.project_description}</p>
-                  </div>
-                </details>
-              </section>
-              <br/>
-              <section>
-                <details>
-                  <summary>Status</summary>
-                  <p>Created at: {project.created_at}</p>
-                  <p>Updated at: {project.updated_at}</p>
-                  <p>{project.status}</p>
-                </details>
-              </section>
-              <br />
-              <a href={project.project_link} target="_blank" rel="noreferrer">Project Link!</a>
-              <br />
-              <button className="button" onClick={() => deleteProject(project)}>Delete Project</button>
-          </div>
-        </div>
+        <Project key={project.id} id={project.id} project={project} project_name={project.project_name} project_description={project.project_description} project_link={project.project_link} created_at={project.created_at} updated_at={project.updated_at} status={project.status} deleteProject={deleteProject} updateProject={updateProject}/>
       ))
   )
 

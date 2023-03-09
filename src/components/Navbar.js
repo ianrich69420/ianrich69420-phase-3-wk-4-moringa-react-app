@@ -26,7 +26,7 @@ function NavBar({ user, setUser }) {
             <button className="button">
                 <Link style={{textDecoration: "none"}}to="/login">Login</Link>
             </button>
-            <a class="navbar-brand text-light">Welcome to PM! The world's leading Project Manager!</a>
+            <p class="navbar-brand text-light">Welcome to PM! The world's leading Project Manager!</p>
             <button className="button">
                 <Link style={{textDecoration: "none"}}to="/register">Register</Link>
             </button>
