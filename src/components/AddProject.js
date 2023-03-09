@@ -34,6 +34,7 @@ function AddProject({ projects }) {
             .then(r => r.json())
             .then(data => console.log(data));
         setIsSubmitted(true);
+        projects.push(projectObj)
     }
   };
 

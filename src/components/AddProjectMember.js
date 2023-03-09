@@ -42,6 +42,7 @@ function AddProjectMember({ projectMembers, users, projects }) {
           .then(r => r.json())
           .then(data => console.log(data));
       setIsSubmitted(true);
+      projectMembers.push(projectMemberObj)
     } else if (projectMemberData) {
       setErrorMessages({name: "email", message: errors.email})
     } else {

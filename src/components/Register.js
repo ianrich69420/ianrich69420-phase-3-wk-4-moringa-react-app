@@ -34,6 +34,7 @@ function Register({ users }) {
             .then(r => r.json())
             .then(data => console.log(data));
         setIsSubmitted(true);
+        users.push(userObj)
     }
   };
 
