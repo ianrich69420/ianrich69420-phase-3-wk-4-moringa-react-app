@@ -16,9 +16,15 @@ function Projects({ projects, deleteProject }) {
                 </details>
               </section>
               <br/>
+              <section>
+                <details>
+                  <summary>Status</summary>
+                  <p>Created at: {project.created_at}</p>
+                  <p>Updated at: {project.updated_at}</p>
+                </details>
+              </section>
+              <br />
               <a href={project.project_link} target="_blank" rel="noreferrer">Project Link!</a>
-              <p>Created at: {project.created_at}</p>
-              <p>Updated at: {project.updated_at}</p>
               <button className="button" onClick={() => deleteProject(project)}>Delete Project</button>
           </div>
         </div>
