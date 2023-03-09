@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-function Login({ users }) {
+function Login({ users, setUser }) {
   const [errorMessages, setErrorMessages] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const navigate = useNavigate()
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -26,6 +28,11 @@ function Login({ users }) {
       setErrorMessages({ name: "username", message: errors.username });
     }
   };
+
+  if (isSubmitted) {
+    setUser(true)
+    navigate('/projects')
+  }
 
   const renderErrorMessage = (name) =>
     name === errorMessages.name && (

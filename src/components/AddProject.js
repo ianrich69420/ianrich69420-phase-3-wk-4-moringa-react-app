@@ -69,7 +69,7 @@ function AddProject({ projects }) {
     <div className="app">
       <div className="project-form">
         <div className="title">Add Project</div>
-        {isSubmitted ? <div>Project submitted!</div> : renderForm}
+        {isSubmitted ? <div>Project submitted, reload the page!</div> : renderForm}
       </div>
     </div>
   );

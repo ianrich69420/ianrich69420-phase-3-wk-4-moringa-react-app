@@ -24,7 +24,7 @@ function AddProjectMember({ projectMembers, users, projects }) {
 
     const userData = users.find((user) => user.email === email.value)
 
-    const projectMemberData = projectMembers.find(projectData ? (projectMember) => projectMember.project_id === projectData.id && projectMember.email === email.value : () => {});
+    const projectMemberData = projectMembers.find(projectData ? (projectMember) => projectMember.project_id === projectData.id && projectMember.email === email.value : () => {return null});
 
     console.log(projectMemberData)
     console.log(userData)

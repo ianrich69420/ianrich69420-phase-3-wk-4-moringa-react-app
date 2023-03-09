@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from './components/Navbar';
 
 function App() {
+  const [token, setToken] = useState(false)
 
   const [users, setUsers] = useState([])
   const [projects, setProjects] = useState([])
@@ -42,9 +43,9 @@ function App() {
   return (
     <div>
       <Router>
-        <NavBar />
+        <NavBar setUser={setToken} user={token}/>
         <Routes>
-          <Route exact path="/login" element={<Login users={users} />} />
+          <Route exact path="/login" element={<Login users={users} setUser={setToken} />} />
           <Route exact path="/register" element={<Register users={users} />} />
           <Route exact path="/projects" element={<Projects projects={projects} deleteProject={deleteProject} />} />
           <Route exact path="/add_project" element={<AddProject projects={projects} />} />
