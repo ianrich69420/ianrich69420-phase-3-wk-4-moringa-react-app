@@ -21,6 +21,7 @@ function Projects({ projects, deleteProject }) {
                   <summary>Status</summary>
                   <p>Created at: {project.created_at}</p>
                   <p>Updated at: {project.updated_at}</p>
+                  <p>{project.status}</p>
                 </details>
               </section>
               <br />

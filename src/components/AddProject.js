@@ -11,12 +11,13 @@ function AddProject({ projects }) {
         project_name: "Project Name already used"
     };
 
-    var { project_name, project_description, project_link } = document.forms[0];
+    var { project_name, project_description, project_link, status } = document.forms[0];
 
     const projectObj = {
         project_name: project_name.value,
         project_description: project_description.value,
-        project_link: project_link.value
+        project_link: project_link.value,
+        status: status.value
     }
 
     const projectData = projects.find((project) => project.project_name === project_name.value);
@@ -58,6 +59,10 @@ function AddProject({ projects }) {
         <div className="input-container">
           <label>Project Link </label>
           <input type="text" name="project_link" required />
+        </div>
+        <div className="input-container">
+          <label>Project Status </label>
+          <input type="text" name="status" required />
         </div>
         <div className="button-container">
           <input type="submit" />
