@@ -24,7 +24,7 @@ function AddProjectMember({ projectMembers, users, projects }) {
 
     const userData = users.find((user) => user.email === email.value)
 
-    const projectMemberData = projectMembers.find((projectMember) => projectMember.project_id === projectData.id && projectMember.email === email.value );
+    const projectMemberData = projectMembers.find(projectData ? (projectMember) => projectMember.project_id === projectData.id && projectMember.email === email.value : () => {});
 
     console.log(projectMemberData)
     console.log(userData)
@@ -60,6 +60,7 @@ function AddProjectMember({ projectMembers, users, projects }) {
         <div className="input-container">
           <label>Membername </label>
           <input type="text" name="membername" required />
+          {renderErrorMessage("project_member")}
         </div>
         <div className="input-container">
           <label>Email </label>
@@ -73,7 +74,6 @@ function AddProjectMember({ projectMembers, users, projects }) {
         <div className="button-container">
           <input type="submit" />
         </div>
-          {renderErrorMessage("project_member")}
       </form>
     </div>
   );
