@@ -39,6 +39,10 @@ function AddProject({ projects }) {
     }
   };
 
+  if (isSubmitted) {
+    window.location.pathname = "/projects"
+  }
+
   const renderErrorMessage = (name) =>
   name === errorMessages.name && (
     <div className="error">{errorMessages.message}</div>
@@ -75,7 +79,7 @@ function AddProject({ projects }) {
     <div className="app">
       <div className="project-form">
         <div className="title">Add Project</div>
-        {isSubmitted ? <div>Project submitted, reload the page!</div> : renderForm}
+        {isSubmitted ? <div>Project added! Check the page</div> : renderForm}
       </div>
     </div>
   );

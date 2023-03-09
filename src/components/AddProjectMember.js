@@ -45,6 +45,10 @@ function AddProjectMember({ projectMembers, users, projects }) {
     }
   };
 
+  if (isSubmitted) {
+    window.location.pathname = "/add_project_member"
+  }
+
   const renderErrorMessage = (name) =>
   name === errorMessages.name && (
     <div className="error">{errorMessages.message}</div>

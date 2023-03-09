@@ -6,7 +6,7 @@ This is the project made for the second independent project for Moringa School d
 
 It has an user-project domain with this ERD:
 
-
+![Screenshot from 2023-03-10 07-58-04](https://user-images.githubusercontent.com/117741313/224227432-0a713161-af83-42da-92cf-1e2b193268a0.png)
 
 The app is set to meet the following deliverables:
 
